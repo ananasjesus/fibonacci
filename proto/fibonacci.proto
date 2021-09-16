@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "github.com/ananasjesus/fibonacci/proto";
+
+package api;
+
+service Fibonacci {
+  rpc Fibonacci(FibonacciRequest) returns (FibonacciResponse) {}
+}
+
+message FibonacciRequest {
+  string from = 1;
+  string to = 2;
+}
+
+message FibonacciResponse {
+  string from = 1;
+  string to = 2;
+  repeated int64 numbers = 3;
+}

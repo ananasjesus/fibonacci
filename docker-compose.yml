@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  fibonacci:
+    build: ./
+    command: ./fibonacci
+    ports:
+      - 8000:8000
+      - 8080:8080
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:latest
+    ports:
+      - 63790:6379
